@@ -1,0 +1,15 @@
+<button
+  (click)="getAllProducts.emit()"
+  mat-raised-button
+  color="primary">
+  {{ 'Refresh' | translate | async }}
+</button>
+@if (allProducts) {
+<app-products-list
+  [products]="allProducts"
+  [lang]="lang"
+  [showEdit]="true"
+  [currency]="currency"
+  (editProduct)="editProduct.emit($event)">
+</app-products-list>
+}
